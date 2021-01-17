@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeNEWS</title>
+    <style>
+        .n {
+            position: relative;
+            top: -25px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>BeeNEWS</h1>
+        <p class="n">NEWS AT A GLANCE</p>
+    </center>
+    <br>
+    <center>
+        <a href="{% url 'abc' %}"><button>ABC</button></a>
+        <a href="{% url 'home' %}"><button>BBC</button></a>
+        <a href="{% url 'cnn' %}"><button>CNN</button></a>
+        <a href="{% url 'gnews' %}"><button>GoogleNews</button></a>
+        <a href="{% url 'espnCrick' %}"><button>ESPNCricket</button></a>
+        <a href="{% url 'espn' %}"><button>ESPN</button></a>
+        <a href="https:\\www.google.com" target="blank"><button>Google</button></a>
+    </center>
+    <br><br>
+    <center>
+        <div class="container">
+            {% for news,des,img,con in newlist %}
+            <h2>{{news}}</h2>
+            {{value | linebreaks}}
+
+            <img src="{{img}}" alt="">
+
+            <p>{{des}}</p>
+            {{value | linebreaks}}
+
+
+            <br><br>
+            {% endfor %}
+        </div>
+    </center>
+
+</body>
+
+</html>
